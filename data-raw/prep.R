@@ -42,6 +42,9 @@ labelled::var_label(puma2020_to_county2020) = readr::read_csv("data-raw/puma2020
 puma2020_to_place2020 = readr::read_csv("data-raw/puma2020_to_place2020.csv")[-1,]
 labelled::var_label(puma2020_to_place2020) = readr::read_csv("data-raw/puma2020_to_place2020.csv")[1,]
 
+zcta2020_to_AlamedaSupervisor2020 = readr::read_csv("data-raw/zcta2020_to_AlamedaSupervisor2020.csv")[-1,]
+labelled::var_label(zcta2020_to_AlamedaSupervisor2020) = readr::read_csv("data-raw/zcta2020_to_AlamedaSupervisor2020.csv")[1,]
+
 usethis::use_data(
         zcta2010_to_usd2010,
         zcta2010_to_usd2014,
@@ -56,6 +59,7 @@ usethis::use_data(
         zcta2010_to_puma2012,
         puma2020_to_zcta2020,
         puma2020_to_place2020,
-        puma2020_to_county2020
+        puma2020_to_county2020,
+        zcta2020_to_AlamedaSupervisor2020,
         overwrite = TRUE
 )
